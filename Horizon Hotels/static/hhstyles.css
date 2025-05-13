@@ -1,0 +1,842 @@
+/*
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+*/
+
+/* This CSS will be present within all the pages of my website. It provides CSS for the font, background, navigation bar and footer of my website. */
+*{
+    box-sizing: border-box;
+}
+
+option{
+    color: black;
+}
+
+*::placeholder{
+    color:rgba(255, 255, 255, 0.575)
+}
+
+body{
+    font-family:  'Roboto', sans-serif;
+    background-color: #fff;
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px){
+    body{
+        font-size: 1.2em;
+    }
+}
+
+hr{
+    border-top: 5px solid #FFB4B4;
+    border-radius: 5px;
+}
+
+a:link{
+    color: #fff;
+}
+
+a:hover{
+    color: #a06262;
+}
+
+
+.nav-bar{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #572e2e;
+    width: 100%;
+    border-bottom: #fff 4px solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+#company-logo{
+    width: 80px;
+    height: 80px;
+    padding-top: 5%;
+}
+
+#signup-login{
+    background: linear-gradient(#d6b0b0, #a06262);
+    border-radius: 25px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 5%;
+    margin: 0 5px;
+    margin-top: 5%;
+}
+
+nav ul li a{
+    color: white;
+    border-radius: 25px;
+    font-size: 1.3em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    background: #d6b0b0;
+    transition: 0.5s ease-in-out;
+}
+
+nav ul li a:active{
+    background: #fff;
+    transition: background 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+
+.hamburger{
+    display: none;
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.hamburger:focus{
+    outline: none;
+}
+
+@media screen and (max-width: 768px){
+    .nav-bar-ul{
+        display: none;
+        width: 100%;
+        min-height: 80vh;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+
+    .nav-bar-ul.open{
+        display: flex;
+    }
+
+    .hamburger{
+        display: block;
+        margin-left: 40%;
+    }
+
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #572e2e;
+    color: white;
+    text-align:left;
+    border-top: #fff 4px solid;
+    padding: 1%;
+}
+
+@media only screen and (max-width: 768px){
+    footer{
+        height: 4%;
+        text-align: center;
+        font-size: 0.6em;
+    }
+}
+
+#footer-text{
+    color: #FFB4B4;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#footer-text:active{
+    color: #fff;
+}
+
+.search-button{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    width: 60%;
+    margin-top: 1%;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    margin-bottom: 4%;
+}
+
+.search-button:active{
+    background: #695c5c;
+    transition: background 0.1s ease-in-out;
+}
+
+input[type= "submit"]{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    margin-top: 1%;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    margin-bottom: 4%;
+}
+
+input[type= "submit"]:active{
+    background: #695c5c;
+    transition: background 0.1s ease-in-out;
+}
+
+/* This CSS will mainly provide the CSS for the contents inside the About Us page */
+
+.aboutus-images{
+    border: #fff 4px solid;
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    border-radius: 25px;
+}
+
+.our-mission{
+    background-color: #2c1414;
+    color: #fff;
+    text-align: left;
+    width: 60%;
+    margin-top: 2%;
+}
+
+.our-services{
+    background-color: #945c5c;
+    color: #fff;
+    text-align: right;
+    width: 60%;
+    margin-top: 3%;
+    float: right;
+    margin-bottom: 2%;
+}
+
+@media only screen and (max-width: 768px){
+    [class="our-mission"]{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 768px){
+    [class="our-services"]{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    [class="aboutus-images"]{
+        max-width: 200px;
+    }
+}
+
+/* This CSS will mainly provide the CSS for the sign-up/log-in page */
+
+.login-signup{
+    width: 70%;
+    height: 60%;
+    background: #945c5c;
+    color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    border: 3px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+.login-signup input[type= "email"], input[type= "password"]{
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    padding: 1%;
+    
+}
+
+
+.login-signup input[type= "submit"]{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    width: 60%;
+    margin-top: 1%;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    margin-bottom: 4%;
+    padding: 1%;
+}
+
+.login-signup input[type= "submit"]:active{
+    background: #695c5c;
+    transition: background 0.1s ease-in-out;
+}
+
+@media only screen and (max-width: 768px){
+    [class="login-signup"]{
+        width: 100%;
+        font-size: 1.2em;
+        padding: 10%;
+    }
+    [class=login-signup] input[type= "email"]{
+        padding: 5%;
+        
+    }
+    [class=login-signup] input[type= "password"]{
+        padding: 5%;
+        
+    }
+}
+
+/* This CSS will be mainly used for the contact us page */
+
+.contactus-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      
+}
+
+.contactus-wrapper{
+    text-align: center;
+    width: 90%;
+    display: grid;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    background: #804949;
+    grid-template-columns: 3fr 2fr;
+    grid-row-gap: 1em;
+    grid-auto-rows: minmax(100px, auto);
+    color: #fff;
+}
+
+.contactus-wrapper div:nth-child(odd){
+    background: #a06262;
+}
+
+.contactus-wrapper h2{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.contactus-wrapper li{
+    color: #fff;
+}
+
+.contactus-icons{
+    max-width: 3%;
+    float: left;
+    clear:both;
+}
+
+.contactus-query input[type="submit"]{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    width: 60%;
+    margin-top: 1%;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    padding: 1%;
+}
+
+.contactus-query input[type= "submit"]:active{
+    background: #695c5c;
+    transition: background 0.1s ease-in-out;
+}
+
+.contactus-query textarea, input[type="text"], input[type= "email"], input[type= "password"]{
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    padding: 1%;
+    
+}
+
+.contactus-query textarea{
+    border: 1px solid #ffffff;
+}
+
+
+@media only screen and (max-width: 768px) {
+    [class*="contactus-wrapper"] {
+      width: 100%;
+      grid-template-columns: auto;
+      font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="contactus-icons"] {
+        max-width: 10%;
+    }
+}
+    
+/* This CSS will mainly be used for the make a booking section */
+
+.destination-preview-container{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    color: #fff;
+    min-height: 100vh;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.destination-preview{
+    background-color: #805e5e;
+    border: 3px solid #fff;
+    width: 300px;
+    padding: 1%;
+}
+
+.destination-preview .destination-img{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.destination-preview .destination-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.destination-preview .destination-img img:nth-child(2){
+    position: absolute;
+    top: -20%;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s all;
+}
+
+.destination-preview .destination-img:hover img:nth-child(2){
+    opacity: 1;
+    top: 0;
+}
+
+.destination-info {
+    margin: 1%;
+}
+
+.destination-info .booking-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    padding: 5%;
+}
+
+.destination-info .booking-buttons button{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    font-size: 75%;
+}
+
+.destination-info .booking-buttons form input[type="submit"]{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+}
+
+.destination-info .booking-buttons button:active{
+    background: #695c5c;
+    transition: background 0.1s ease-in-out;
+}
+
+.destination-info .booking-buttons form input[type="submit"]:active{
+    background: #695c5c;
+    transition: background 0.1s ease-in-out;
+}
+
+/* CSS for the modal */
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.2s ease-in-out;
+    border: 3px solid #fff;
+    z-index: 10;
+    background-color: #9e8a8a;
+    width: 80%;
+    color: #fff;
+}
+
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header{
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.modal-header .title{
+
+    font-weight: bold;
+}
+
+.modal-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 3em;
+}
+
+.modal-body{
+    padding: 2%;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    pointer-events: all;
+    opacity: 1;
+}
+
+/* CSS for confirm booking page */
+
+.confirmbooking-container{
+    width: 70%;
+    height: 60%;
+    background: #945c5c;
+    color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    border: 3px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+#card-textbox{
+    width: 40%; 
+    padding: 1%;
+}
+
+#cardcvv-textbox{
+    width: 30%; 
+    padding: 1%;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="confirmbooking-container"] {
+        width: 100%;
+        font-size: 1.1em;
+    }
+    
+    #card-textbox{
+        width: 80%;
+        padding: 4%;
+    }
+
+    #cardcvv-textbox{
+        width: 30%; 
+        padding: 4%;
+    }
+
+}
+
+/* CSS for manage booking page */
+
+.managebooking-container{
+    width: 70%;
+    height: 60%;
+    background: #945c5c;
+    color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    border: 3px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+}
+  
+  td, th {
+    border: 3px solid #ffffff;
+    text-align: center;
+    padding: 20px;
+    word-wrap: break-word;
+}
+
+  #managebooking-button{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 4%;
+    width: 50%;
+}
+  
+  #managebooking-button:active{
+    background: #695c5c;
+    transition: background 0.1s ease-in-out;
+}
+  
+  tr:nth-child(even) {
+    background-color: #805e5e;
+  }
+
+@media only screen and (max-width: 768px) {
+    [class*="managebooking-container"] {
+        width: 100%;
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    table{
+        font-size: 0.6em;
+    }
+}
+
+/* CSS for flash messages */
+.flash-messages{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1%;
+    border: 5px solid #a06262;
+    color: black;
+    font-size: 1.4em;
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="flash-messages"] {
+        width: 100%;
+    }
+}
+
+/* CSS for booking complete page */
+#congrats-text{
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="congrats-text"] {
+        width: 100%;
+        font-size: 1.8em;
+    }
+}
+
+/* CSS for the error pages text */
+.error-page-text{
+    color: rgb(255, 8, 8);
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="error-page-text"] {
+        width: 100%;
+    }
+}
+
+/* CSS for darkmode button */
+
+#darkmode-button{
+    float: right;
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    padding:0.3%;
+    font-weight: bold;
+}
+
+#darkmode-button:active{
+    background: rgb(151, 145, 145);
+    transition: background 1s ease-in-out;
+    transition: color 1s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+    #darkmode-button{
+        display: none;
+    }
+}
+
+.dark-mode {
+    background-color: #292c35;
+    color: white;
+}
+
+/* CSS for default admin page */
+.admin-page-container{
+    width: 70%;
+    height: 60%;
+    background: #945c5c;
+    color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    border: 3px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+/* CSS for manage booking admin */
+.managebookingadmin-container{
+    width: 70%;
+    height: 60%;
+    background: #945c5c;
+    color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    border: 3px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+#managebookingadmin-button{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 4%;
+    width: 50%;
+}
+
+
+/* CSS for manage users admin */
+
+.manageusersadmin-container{
+    width: 70%;
+    height: 60%;
+    background: #945c5c;
+    color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    border: 3px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+#manageusersadmin-button{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 4%;
+    width: 50%;
+}
+/* CSS for edit hotels admin */
+.edithotels-container{
+    width: 70%;
+    height: 60%;
+    background: #945c5c;
+    color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    border: 3px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="edithotels-container"] {
+        width: 100%;
+    }
+}
+
+/* CSS for view queries admin */
+.viewqueries-container{
+    width: 70%;
+    height: 60%;
+    background: #945c5c;
+    color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    border: 3px solid #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+#updatequery-button{
+    background: #d6b0b0;
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 4%;
+    width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="admin-page-container"] {
+        width: 100%;
+        font-size: 0.8em;
+    }
+    [class*="managebookingadmin-container"] {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    [class*="manageusersadmin-container"] {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    [class*="viewqueries-container"] {
+        width: 100%;
+        font-size: 0.8em;
+    }
+}

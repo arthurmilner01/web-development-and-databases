@@ -1,0 +1,50 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Admin - Manage Users{% endblock %}
+{% block manageusers %} style="background-color: black" {% endblock %}
+{% block content %}
+<div class="manageusersadmin-container">
+    <h2>Manage User Accounts:</h2>
+    <p>Search for Users by E-mail:</p>
+    <input type="text" id="user-search" onkeyup="searchUser()" placeholder="User search by email.." style="margin-bottom: 3%;">
+    <table id="user-table"> <!--The python here fills in the headings from the list headings and then add rows depending on how many bookings the current user has, if they have not bookings it will display a message informing them of this.-->
+        <tr>
+            <th>User Emails:</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form style="padding-top: 4%;" method="post">
+        <p>Enter user e-mail to delete their account:</p>
+        <input type="text" name="user-email" placeholder="Enter user e-mail here..." required>
+        <input type="submit" value="Delete User" name="manageusersadmin-submit" id="manageusersadmin-button">
+    </form>
+</div>
+
+<script>
+    function searchUser() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("user-search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("user-table");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+</script>
+{% endblock %}

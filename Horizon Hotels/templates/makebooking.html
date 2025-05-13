@@ -1,0 +1,624 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Make Booking{% endblock %}
+{% block makebooking %} style="background-color: black" {% endblock %}
+{% block content %}
+    <div class="destination-preview-container">
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/aberdeen1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/aberdeen2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Aberdeen</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £60
+                    <br>
+                    Peak: From £140
+                    <br>
+                    Max Capacity: 80 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="1" style = "font-size:75%;">Book Aberdeen</button>
+                    </form>
+
+                    <button data-modal-target="#modal-aberdeen">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/belfast1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/belfast2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Belfast</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £60
+                    <br>
+                    Peak: From £130
+                    <br>
+                    Max Capacity: 80 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="2" style = "font-size:75%;">Book Belfast</button>
+                    </form>
+                    <button data-modal-target="#modal-belfast">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/birmingham1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/birmingham2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Birmingham</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £70
+                    <br>
+                    Peak: From £150
+                    <br>
+                    Max Capacity: 90 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="3" style = "font-size:75%;">Book Birmingham</button>
+                    </form>
+
+                    <button data-modal-target="#modal-birmingham">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/bristol1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/bristol2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Bristol</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £70
+                    <br>
+                    Peak: From £140
+                    <br>
+                    Max Capacity: 90 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="4" style = "font-size:75%;">Book Bristol</button>
+                    </form>
+
+                    <button data-modal-target="#modal-bristol">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/cardiff1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/cardiff2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Cardiff</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £60
+                    <br>
+                    Peak: From £120
+                    <br>
+                    Max Capacity: 80 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="5" style = "font-size:75%;">Book Cardiff</button>
+                    </form>
+                    <button data-modal-target="#modal-cardiff">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/edinburgh1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/edinburgh2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Edinburgh</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £70
+                    <br>
+                    Peak: From £160
+                    <br>
+                    Max Capacity: 90 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="6" style = "font-size:75%;">Book Edinburgh</button>
+                    </form>
+
+                    <button data-modal-target="#modal-edinburgh">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/glasgow1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/glasgow2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Glasgow</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £70
+                    <br>
+                    Peak: From £150
+                    <br>
+                    Max Capacity: 75 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="7" style = "font-size:75%;">Book Glasgow</button>
+                    </form>
+
+                    <button data-modal-target="#modal-glasgow">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/london1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/london2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>London</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £80
+                    <br>
+                    Peak: From £200
+                    <br>
+                    Max Capacity: 120 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="8" style = "font-size:75%;">Book London</button>
+                    </form>
+
+                    <button data-modal-target="#modal-london">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/manchester1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/manchester2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Manchester</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £80
+                    <br>
+                    Peak: From £180
+                    <br>
+                    Max Capacity: 110 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="9" style = "font-size:75%;">Book Manchester</button>
+                    </form>
+
+                    <button data-modal-target="#modal-manchester">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/newcastle1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/newcastle2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Newcastle</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £60
+                    <br>
+                    Peak: From £75
+                    <br>
+                    Max Capacity: 80 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="10" style = "font-size:75%;">Book Newcastle</button>
+                    </form>
+
+                    <button data-modal-target="#modal-newcastle">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/norwich1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/norwich2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Norwich</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £60
+                    <br>
+                    Peak: From £75
+                    <br>
+                    Max Capacity: 80 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="11" style = "font-size:75%;">Book Norwich</button>
+                    </form>
+
+                    <button data-modal-target="#modal-norwich">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/nottingham1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/nottingham2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Nottingham</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £70
+                    <br>
+                    Peak: From £120
+                    <br>
+                    Max Capacity: 75 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="12" style = "font-size:75%;">Book Nottingham</button>
+                    </form>
+
+                    <button data-modal-target="#modal-nottingham">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/oxford1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/oxford2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Oxford</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £70
+                    <br>
+                    Peak: From £180
+                    <br>
+                    Max Capacity: 80 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="13" style = "font-size:75%;">Book Oxford</button>
+                    </form>
+
+                    <button data-modal-target="#modal-oxford">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/plymouth1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/plymouth2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Plymouth</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £50
+                    <br>
+                    Peak: From £180
+                    <br>
+                    Max Capacity: 80 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="14" style = "font-size:75%;">Book Plymouth</button>
+                    </form>
+
+                    <button data-modal-target="#modal-plymouth">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-preview">
+            <div class="destination-img">
+                <img src="{{ url_for('static', filename='images/swansea1.jpg')}}" alt="">
+                <img src="{{ url_for('static', filename='images/swansea2.jpg')}}" alt="">
+            </div>
+            <div class="destination-info">
+                <div style="margin-bottom: 3%; font-size: 1.3em;">
+                    <strong>Swansea</strong>
+                </div>
+
+                <div style="font-style: italic; font-size: 0.8em;">
+                    Off-Peak: From £50
+                    <br>
+                    Peak: From £120
+                    <br>
+                    Max Capacity: 80 Rooms
+                </div>
+
+                <div class="booking-buttons">
+                    <form method="post">
+                        <button type="submit" name="book-button" value="15" style = "font-size:75%;">Book Swansea</button>
+                    </form>
+
+                    <button data-modal-target="#modal-swansea">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-aberdeen">
+        <div class="modal-header">
+            <div class="title">Why Aberdeen?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            Beautiful city on the coast of Scotland, it is also the third largest city in Scotland with a population of
+            approx 200,000.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-belfast">
+        <div class="modal-header">
+            <div class="title">Why Belfast?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            Captial and largest city within Northern Ireland, its home to amazing sights and true breath of fresh air
+            for travellers everywhere.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-birmingham">
+        <div class="modal-header">
+            <div class="title">Why Birmingham?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            It is one of Englands biggest cultural centres and is a fantastic choice for either a weekend away, or
+            perhaps something much longer!
+        </div>
+    </div>
+
+    <div class="modal" id="modal-bristol">
+        <div class="modal-header">
+            <div class="title">Why Bristol?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            This city is a staple of the South West of England, it oozes creativity and culture and is sure to be a
+            great get-away.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-cardiff">
+        <div class="modal-header">
+            <div class="title">Why Cardiff?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            The city and capital of Wales is a lovely place to visit, the city is full of rich history and amazing
+            buildings.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-edinburgh">
+        <div class="modal-header">
+            <div class="title">Why Edinburgh?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            The capital city of Scotland is not one to be missed, see the historical sights such as the Edinburgh Castle
+            or go and enjoy a night out on the town, the choice is all yours.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-glasgow">
+        <div class="modal-header">
+            <div class="title">Why Glasgow?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            This Scotland city has been dubbed "World's Friendliest" quite a few times, and for good reason, the locals
+            mixed with the sights it has to offer makes for a wonderful weekend away.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-london">
+        <div class="modal-header">
+            <div class="title">Why London?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            London as a city almost sells itself, you'll never bore of something to do and excitement waits around every
+            corner. This would be a get-away you wont soon forget.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-manchester">
+        <div class="modal-header">
+            <div class="title">Why Manchester?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            With a population of 2,240,230 people, Manchester is a fantastic place to go when looking for some
+            excitement, there are plenty of events constantly running and always something to do.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-newcastle">
+        <div class="modal-header">
+            <div class="title">Why Newcastle?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            Newcastle is an incredibly lively and artistic city, a night out in Newcastle will forever be a night worth
+            experiencing.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-norwich">
+        <div class="modal-header">
+            <div class="title">Why Norwich?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            Norwich is perfect for those looking for a quieter get-away, its a lovely looking city and despite being
+            less lively than others on offer, it definitely wont leave you feeling unfullfilled.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-nottingham">
+        <div class="modal-header">
+            <div class="title">Why Nottingham?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            This large midlands city is a great escape from reality as it has plenty to do and plenty to see.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-oxford">
+        <div class="modal-header">
+            <div class="title">Why Oxford?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            This might be one of the most beautiful places to visit within the whole of the UK, the city is packed with
+            wonderful architecture that has stood the test of time.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-plymouth">
+        <div class="modal-header">
+            <div class="title">Why Plymouth?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            Plymouth is a fantastic location for a quiet retreat, the area can provide some welcome calm to an otherwise
+            hectic life.
+        </div>
+    </div>
+
+    <div class="modal" id="modal-swansea">
+        <div class="modal-header">
+            <div class="title">Why Swansea?:</div>
+            <button data-close-button class="close-button" style="color:white;">&times;</button>
+        </div>
+        <div class="modal-body">
+            The second largest city of Wales offers some lovely tourist attractions, such as the Gower Peninsula or the
+            Clyne Gardens, it is a very recommended visit.
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+{% endblock %}

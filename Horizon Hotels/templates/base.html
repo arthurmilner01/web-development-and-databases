@@ -1,0 +1,86 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='hhstyles.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://use.fontawesome.com/30f9d1c49a.js"></script>
+</head>
+
+<body {% block datevalidate %}{% endblock %}>
+
+    <nav class="nav-bar">
+        {% if session.get("AdminStatus") != "Admin" %}
+            <a href="{{ url_for('aboutus') }}">
+                <img id="company-logo" src="{{ url_for('static', filename='images/logo.png')}}" alt="Company Logo">
+            </a>
+        {% endif %}
+        {% if session.get("AdminStatus") == "Admin" %}
+            <h1>Welcome, Admin</h1>
+        {% endif %}
+        <button class="hamburger" id="hamburger">
+            <i class="fa fa-bars"></i>
+        </button>
+        <ul class="nav-bar-ul" id="nav-bar-ul">
+            {% if session.get("AdminStatus") != "Admin" %}
+                <li><a {% block aboutus %}{% endblock %} href="{{ url_for('aboutus') }}">About Us</a></li>
+                <li><a {% block makebooking %}{% endblock %} href="{{ url_for('makebooking') }}">Make a Booking</a></li>
+                <li><a {% block managebooking %}{% endblock %} href="{{ url_for('managebooking') }}">Manage Bookings</a></li>
+                <li><a {% block contactus %}{% endblock %} href="{{ url_for('contactus') }}">Contact Us</a></li>
+            {% endif %}
+            {% if session.get("AdminStatus") == "Admin" %}
+                <li><a {% block manageusers %}{% endblock %} href="{{ url_for('manageusers') }}">Manage Users</a></li>
+                <li><a {% block manageuserbookings %}{% endblock %} href="{{ url_for('manageuserbookings') }}">Manage User Bookings</a></li>
+                <li><a {% block edithotels %}{% endblock %} href="{{ url_for('edithotels') }}">Edit Hotels</a></li>
+                <li><a {% block viewqueries %}{% endblock %} href="{{ url_for('viewqueries') }}">View Queries</a></li>
+            {% endif %}
+                <li><a {% block signuplogin %}{% endblock %} id="signup-login" href="{{ url_for('signuplogin') }}">
+                {% if session.get("CurrentUserID") == None %}
+                    Sign-Up/Log-In
+                {% else %}
+                    Log-Out
+                {% endif %}
+            </a></li>
+            
+        </ul>
+    </nav>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+            <p class="flash-messages">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+
+
+    <footer>
+        {% if session.get("AdminStatus") != "Admin" %}
+        <a href="{{ url_for('contactus') }}" id="footer-text">@ 2021 Horizon Hotels, Inc. All rights reserved.</a>
+        {% endif %}
+        <button type="button" id="darkmode-button" onclick="darkMode()">Toggle Dark Mode</button>
+    </footer>
+
+</body>
+
+<script src="{{ url_for('static', filename='hhapp.js') }}"></script>
+{% if session.get("FirstVisit") == True %}
+    <script type="text/javascript">alert("Warning: By using this site you agree to the use of sessions/cookies in order to store data such as account details and user bookings. Please view our privacy statement for more information.");</script>
+{% endif %}
+
+</html>

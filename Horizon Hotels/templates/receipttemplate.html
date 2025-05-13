@@ -1,0 +1,23 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png')}}">
+    <title>Booking Reciept: Booking #{{code}}</title>
+</head>
+<body style="background-color:#FFB4B4; font-family:  'Roboto', sans-serif;">
+    <div style="position: absolute;left: 50%; top: 50%;width:30%; transform: translate(-50%, -50%); border:5px solid #af6f6f; padding:5%; background-color: white;">
+        <h1 style="font-size: 2em;text-align: center;">BOOKING RECIEPT:</h1>
+        <hr>
+        <h2 style="font-size: 1.5em;text-align: center;">Booking Code: {{code}}<br>
+        Booking Price: {{currency}}{{price}}</h2>
+        <p style="font-size: 1.5em;text-align: center;">We thank you for choosing Horizon Hotels!</p>
+    </div>
+</body>
+</html>

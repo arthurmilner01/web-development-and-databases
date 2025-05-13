@@ -1,0 +1,43 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Admin - Edit Hotels{% endblock %}
+{% block edithotels %} style="background-color: black" {% endblock %}
+{% block content %}
+<div class="edithotels-container">
+    <h1>Edit Hotel Details:</h1>
+    <p>Select a hotel below to view its details:</p>
+    <select name="hotel-id" onchange="displayHotel(this.value)" style="padding: 1%; color: black;" required>
+        <option value="">Select a Hotel:</option>
+        {% for hotel in hotels %}
+            <option value="Hotel ID: {{ hotel[0] }}<br>Off-Peak Price: £{{ hotel[2] }}, Peak Price: £{{ hotel[3]}}<br>Standard Capacity: {{ hotel[4] }}, Double Capacity: {{ hotel[5] }}, Family Capacity: {{ hotel[6] }}">{{ hotel[1] }}</option>
+        {% endfor %}
+    </select>
+    <p id="hotel-details"></p>
+    <h2>Fill in the Form Below to Edit a Hotel</h2>
+    <h3>(Please note if you wish to maintain the same values you must still input those values):</h3>
+    <form style="margin-top: 5%;" method="post">
+        <p>Enter Hotel ID:</p>
+        <input name="edit-id" id="edithotelid-text" type="text" placeholder="Enter the ID of the hotel you wish to edit..." onkeypress="checkNumber('edithotelid-text', event)" required>
+        <p>Enter New Off-Peak Price:</p>
+        <input name="edit-offpeak" id="edithotelopp-text" type="text" placeholder="Enter the new peak price..." onkeypress="checkNumber('edithotelopp-text', event)" required>
+        <p>Enter New Peak Price:</p>
+        <input name="edit-peak" id="edithotelpp-text" type="text" placeholder="Enter the new off-peak price..." onkeypress="checkNumber('edithotelpp-text', event)" required>
+        <p>Enter New Standard Capacity:</p>
+        <input name="edit-standard" id="edithotelsc-text" type="text" placeholder="Enter the new standard capacity..." onkeypress="checkNumber('edithotelsc-text', event)" required>
+        <p>Enter New Double Capacity:</p>
+        <input name="edit-double" id="edithoteldc-text" type="text" placeholder="Enter the new double capacity..." onkeypress="checkNumber('edithoteldc-text', event)" required>
+        <p>Enter New Family Capcity:</p>
+        <input name="edit-family" id="edithotelfc-text" type="text" placeholder="Enter the new family capacity..." onkeypress="checkNumber('edithotelfc-text', event)" required>
+        <input type="submit" value="Confirm Changes" style="margin-top: 5%; padding: 1%; width: 60%;">
+    </form>
+</div>
+
+<script>
+    function displayHotel(hotelID){
+        document.getElementById('hotel-details').innerHTML = hotelID;
+    }
+</script>
+{% endblock %}

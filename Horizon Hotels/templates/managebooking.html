@@ -1,0 +1,34 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Manage Booking{% endblock %}
+{% block managebooking %} style="background-color: black" {% endblock %}
+{% block content %}
+    <div class="managebooking-container">
+        <h2>Manage Your Bookings:</h2>
+        <table> <!--The python here fills in the headings from the list headings and then add rows depending on how many bookings the current user has, if they have not bookings it will display a message informing them of this.-->
+            <tr>
+                {% for header in headings  %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking[0] }}</td>
+                <td> {{ booking[1] }}</td>
+                <td> {{ booking[2] }}</td>
+                <td> {{ booking[3] }}</td>
+                <td> {{ booking[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <form style="padding-top: 4%;" method="post">
+            <p>Enter the unique booking code to confirm a cancellation:<br>(Cancellation charges may apply, see the <a href="{{ url_for('contactus') }}" style="color:#ffff;">contact us</a> section for details.)</p>
+            <input id="managebooking-text" type="text" name="booking-code" placeholder="Enter booking code here..." onkeypress="checkNumber('managebooking-text', event)" required>
+            <input type="submit" value="Confirm Cancellation" name="managebooking-submit" id="managebooking-button">
+        </form>
+        <p>No bookings? Perhaps try <a href="{{ url_for('makebooking') }}" style="color:#ffff;">making one here.</a></p>
+    </div>
+{% endblock %}

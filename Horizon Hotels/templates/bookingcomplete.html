@@ -1,0 +1,19 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Confirm Booking{% endblock %}
+{% block content %}
+    <div class="confirmbooking-container">
+        <h2 class="congrats-text">Congratulations!</h2>
+        <p class="congrats-text">Your booking has been completed successfully.<br>
+        Your booking details are as follows:<br>
+        Booking Code: {{code}}<br>
+        Booking Price: {{currency}}{{price}}<br>
+        To view a copy of your reciept please click the button below:</p>
+        <form method="POST" target="_blank">
+            <input type="submit" style="width:80%;" value="View Reciept">
+        </form>
+    </div>
+{% endblock %}

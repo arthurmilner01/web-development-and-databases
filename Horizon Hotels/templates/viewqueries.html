@@ -1,0 +1,33 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Admin - View Queries{% endblock %}
+{% block viewqueries %} style="background-color: black" {% endblock %}
+{% block content %}
+<div class="viewqueries-container">
+    <h2>View Active User Queries:</h2>
+    <table> <!--The python here fills in the headings from the list headings and then add rows depending on how many bookings the current user has, if they have not bookings it will display a message informing them of this.-->
+        <tr>
+            {% for header in headings  %}
+            <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+        {% for query in queries %}
+        <tr>
+            <td>{{ query[0] }}</td>
+            <td> {{ query[1] }}</td>
+            <td> {{ query[2] }}</td>
+            <td> {{ query[3] }}</td>
+            <td> {{ query[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form style="padding-top: 4%;" method="post">
+        <p>Enter Query ID to Mark Query As Resolved:</p>
+        <input id="queryid-text" type="text" name="query-code" placeholder="Enter query ID here..." onkeypress="checkNumber('queryid-text', event)" required>
+        <input type="submit" value="Update Query" name="updatequery-submit" id="updatequery-button">
+    </form>
+</div>
+{% endblock %}

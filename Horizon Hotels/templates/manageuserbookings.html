@@ -1,0 +1,53 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Admin - Manage User Bookings{% endblock %}
+{% block manageuserbookings %} style="background-color: black" {% endblock %}
+{% block content %}
+<div class="managebookingadmin-container">
+    <h2>Manage User Bookings:</h2>
+    <p>Search for Bookings by Users E-mail:</p>
+    <input type="text" id="user-search" onkeyup="searchUser()" placeholder="User search by email.." style="margin-bottom: 3%;">
+    <table id="user-table"> <!--The python here fills in the headings from the list headings and then add rows depending on how many bookings the current user has, if they have not bookings it will display a message informing them of this.-->
+        <tr>
+            {% for header in headings  %}
+            <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking[0] }}</td>
+            <td> {{ booking[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form style="padding-top: 4%;" method="post">
+        <p>Enter the unique booking code to confirm a cancellation:</p>
+        <input id="bookingidadmin-text" type="text" name="booking-code" placeholder="Enter booking code here..." onkeypress="checkNumber('bookingidadmin-text', event)" required>
+        <input type="submit" value="Confirm Cancellation" name="managebookingadmin-submit" id="managebookingadmin-button">
+    </form>
+</div>
+
+<script>
+    function searchUser() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("user-search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("user-table");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Sign-Up/Login{% endblock %}
+{% block signuplogin %} style="background: linear-gradient(#1b1b1b, #8a8787);" {% endblock %}
+{% block content %}
+    <div class="login-signup">
+        <h2>Login</h2>
+        <form method="post">
+            <input type="hidden" name="form-loginsignup" value="login-form">
+            <p>Enter Your E-Mail:</p>
+            <input type="email" name="user-email" placeholder="Enter e-mail..." required>
+            <p>Enter Your Password:</p>
+            <input type="password" name="user-password" placeholder="Enter Password..." minlength="5" required>
+            <br>
+            <input type="submit" value="Log-In" name="login">
+        </form>
+        <p>Forgotten your password? <a href="{{ url_for('changepassword') }}" style="color:#ffff;">Click here</a></p>
+        <br>
+        <hr style="width: 80%;">
+        <br>
+        <h2>Sign-Up</h2>
+        <form method="post">
+            <input type="hidden" name="form-loginsignup" value="signup-form">
+            <p>Enter Your E-Mail:</p>
+            <input type="email" name="new-email" placeholder="Enter e-mail..." required>
+            <p>Create a Password (minimum 5 characters):</p>
+            <input type="password" name="new-password" placeholder="Create Password..." minlength="5" required>
+            <br>
+            <input type="submit" value="Sign-Up" name="signup">
+        </form>
+    </div>
+{% endblock %}

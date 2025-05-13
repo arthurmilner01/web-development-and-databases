@@ -1,0 +1,39 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block datevalidate %}onload="initialdate()"{% endblock %}
+{% block title %}Confirm Booking{% endblock %}
+{% block content %}
+    <div class="confirmbooking-container">
+        <h2>Confirm Your Payment:</h2>
+        <form method="post">
+            <p>Card Number:</p>
+            <input id="card-textbox" type="text" placeholder="Enter your card number..." minlength="16" maxlength="16" onkeypress="checkNumber('card-textbox', event)" required>
+            <p>CVV:</p>
+            <input id="cardcvv-textbox" type="text" placeholder="Enter card CVV..." minlength="3" maxlength="3" onkeypress="checkNumber('cardcvv-textbox', event)" required>
+            <input type="hidden" name="location" value="{{location}}" style="width: 40%;" readonly required>
+            <p>Select Room Size:</p>
+            <select name="room-size" id="room-size" style="padding: 1%; color: black;" required>
+                <option value="1">Standard</option>
+                <option value="2">Double</option>
+                <option value="3">Family</option>
+            </select>
+            <p>Select Number Of Guests (1-6):</p>
+                <input type="number" id="num-of-guests" name="num-of-guests" min="1" max="6" style="padding: 1%; color: black;" value="1" required>
+            <p>Select Check-In Date:</p>
+            <input id="startdate" type="date" name="check-in" style="padding: 1%; color: black;" min="1980-01-01" onchange="setenddate()" required>
+            <p>Select Check-Out Date:</p>
+            <input id="enddate" type="date" name="check-out" style="padding: 1%; color: black;" min="1980-01-01" required>
+            <p>Select Payment Currency:</p>
+            <select name="currency" id="currency" style="padding: 1%; color: black;" required>
+                <option value="1">GBP</option>
+                <option value="2">USD</option>
+                <option value="3">Euros</option>
+            </select>
+            <br>
+            <input type="submit" value="Pay Now" style="margin-top: 5%; padding: 1%; width: 60%;">
+        </form>
+    </div>
+{% endblock %}

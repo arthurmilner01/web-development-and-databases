@@ -1,0 +1,9 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}403 Error{% endblock %}
+{% block content %}
+<h1 class="error-page-text">Error 403:<br>You do not have permission to access that page, perhaps try logging in to fix this error. You can do so using the menu above, or redirect to the homepage of the website using this <a href="{{ url_for('aboutus') }}" style="color:rgb(161, 20, 20);">link</a>.</h1>
+{% endblock %}

@@ -1,0 +1,2 @@
+-Create an account with email ____@admin.com and any valid password to make an admin account, e.g. account with email: admin@admin.com password: admin.
+-To access admin functionality simply log-in with admin account, to exit admin functionality simply log-out.

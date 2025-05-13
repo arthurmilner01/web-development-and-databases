@@ -1,0 +1,26 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}About Us{% endblock %}
+{% block aboutus %} style="background-color: black" {% endblock %}
+{% block content %}
+    <div class="our-mission">
+        <img class="aboutus-images" src="{{ url_for('static', filename='images/hoteldoor.jpg')}}" alt="River Between Two Mountains"
+            style="float: right;">
+        <h1>OUR<br>MISSION</h1>
+        <p style="font-size: 2em;">We aim to inspire and excite,<br> to get our customers back in touch with their inner traveller.
+        <br>If you are not 100% satisfied with our service, then neither are we. This is the attitude at the core of Horizon Hotels<br>
+        and one we wish to maintain no matter the cost.</p>
+    </div>
+
+    <div class="our-services">
+        <img class="aboutus-images" src="{{ url_for('static', filename='images/handshake.jpg')}}" alt="Handshake" style="float:left;">
+        <h1>OUR<br>SERVICE</h1>
+        <p style="font-size: 2em;">The service we offer is the ability to get you a hotel anywhere across the UK, whilst
+            holding nothing back on providing the best offers and deals found across the entire internet.
+        </p>
+    </div>
+{% endblock %}
+

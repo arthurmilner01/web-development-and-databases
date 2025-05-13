@@ -1,0 +1,88 @@
+<!-- 
+Name: Arthur Milner ID: 21035478
+E-Mail: arthur2.milner@live.uwe.ac.uk
+-->
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block contactus %} style="background-color: black" {% endblock %}
+{% block content %}
+    <div class="contactus-container">
+        <div class=" contactus-wrapper">
+            <div class="contactus-query">
+                <h2>Raise a Query</h2>
+                <form method="post">
+                    <p>First Name:</p>
+                    <input type="text" name="queryname" placeholder="Enter your first name..." required>
+                    <p>E-mail:</p>
+                    <input type="email" name="queryemail" placeholder="Enter your e-mail..." required>
+                    <p>Subject of Query:</p>
+                    <input type="text" name="querysubject" placeholder="Enter query subject..." required>
+                    <p>Query Details (Max 500 Characters):</p>
+                    <textarea id="contactus-textarea" name="querydetails" rows="12" cols="60" maxlength="500" required></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div>
+                <h2>FAQ's</h2>
+                <p>
+                    <li><strong>How can I cancel my booking?</strong></li>
+                    <br>To cancel a booking, simply visit the manage bookings tab whilst signed into your account and
+                    follow the on-screen instructions.
+                </p>
+                <p>
+                    <li><strong>How far in advanced can I book my hotel?</strong></li>
+                    <br>You can book a hotel up to three months in advance. It
+                    is also worth
+                    noting discounts of up to
+                    20% will be received should you book between 80-90 days in advanced, this discount will slowly
+                    diminish the closer to the booking date you decide to book.
+                </p>
+                <p>
+                    <li><strong>Are there any charges incurred for cancelling a booking?</strong></li>
+                    <br>As long as you cancel 60 days before the booking date, there will be no cancellation fees. If,
+                    however, you cancel between 30 and 60 days of the booking date, there will be charges of up to 50%
+                    of the booking price. Within 30 days of the booking date, 100% of the booking price will be charged.
+                </p>
+                <p>
+                    <li><strong>Will I recieve a receipt for my order?</strong></li>
+                    <br>You will receive a digital receipt after a payment has been made.
+                </p>
+                <p>
+                    <li><strong>Do you accept payment in different currencies?</strong></li>
+                    <br>We currently accept payments in GBP, Euros and USD. Our exchange rates are as follows:<br>
+                    1 GBP = 1.2 Euros <br> 1 GBP = 1.6 USD.
+                </p>
+                <p>
+                    <li><strong>Other than the contact form, are there other methods to contact your company?</strong></li>
+                    <br> Yes! You can contact our twitter using the following button: <br><br>
+                    <a href="https://twitter.com/intent/tweet?button_hashtag=horizonhotels&ref_src=twsrc%5Etfw"
+                    class="twitter-hashtag-button" data-dnt="true" data-show-count="false" data-size="large">Tweet @horizonhotels</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </p>
+                <hr style="width: 80%;">
+                <h2>Privacy Statement:</h2>
+                <p>By using this website you consent to the use of cookies/session which store relevant information to the booking
+                    process/overall website functionality, an example of this includes the storage of the currently logged in user.
+                    This data is not shared with companies outside of Horizon Hotels and will not be given to third party companies.
+                    By asking for consent to store this data our company is in line with GDPR regulation. Data stored on this website
+                    through sessions/cookies will be stored for a maximum of 30 days. Other sensitive information such as usernames
+                    and passwords will be stored indefinitely in a database unless requested otherwise, the passwords are also encrypted
+                    for greater security.
+                    <br><br>
+                    @ 2021 Horizon Hotels, Inc. All rights reserved
+                </p>
+            </div>
+            <div style="padding-bottom: 3%;">
+                <h2>Contact Details</h2>
+                <img class="contactus-icons" src="{{ url_for('static', filename='images/mailicon.png')}}" alt="Mail Icon">
+                <p>E-mail:<br>horizonhotels@tiscali.co.uk</p>
+                <img class="contactus-icons" src="{{ url_for('static', filename='images/phoneicon.png')}}" alt="Phone Icon">
+                <p>Telephone:<br>05238585944</p>
+                <img class="contactus-icons" src="{{ url_for('static', filename='images/positionmarker.png')}}" alt="Position Marker">
+                <p>Address:<br>Horizon Hotels Ltd., 1956 Pyramid Valley Road, Fort Wayne, Indiana, 46857</p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
